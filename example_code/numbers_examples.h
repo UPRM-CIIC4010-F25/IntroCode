@@ -3,16 +3,12 @@
 #include<iomanip>
 #include<string>
 #include<cstdlib>
+#include<bitset>
+#include<cmath>
 
 using namespace std;
 /*
     Covers:
-    - Escape sequences
-    - Multiple inputs
-    - Input with cin
-    - Input with getline()
-    - Assigment
-    - Characters
     - Numbers
     - Coercing rules
     - Casting
@@ -20,147 +16,6 @@ using namespace std;
     - Constant
     - Random number
 */
-void escapeSequencesExample() {
-    cout << "Escape Sequence Example\n";
-
-    string hello = "Hello";
-    string world = "World";
-    // Text gets printed together
-    cout << "No sequences used"<< endl;
-    cout << hello;
-    cout << world;
-    // A newline separates the words
-    cout << endl << "\\n used" << endl;
-    cout << hello << endl;
-    cout << world << "\n";
-    // Tab separates the words
-    cout << endl << "\\t used" << endl;
-    cout << hello << "\t";
-    cout << world << "\n";
-    // Deletes the last character from hello before printing world
-    cout << endl << "\\b used" << endl;
-    cout << hello << "\b";
-    cout << world << "\n";
-    // Moves cursor back to beginning before printing world
-    cout << endl << "\\r used" << endl;
-    cout << hello << "\r";
-    cout << world << "\n";
-    // Sets an alarm
-    cout << endl << "\\a used" << endl;
-    cout << hello << "\a";
-    cout << world << "\n";
-    // Can print ' and " 
-    cout << endl << "with quotes used" << endl;
-    cout << "\'" << hello << "\' \"";
-    cout << world << "\" \n\n";
-}
-
-void multipleInputsExample() {
-    cout << "Multiple Input Example\n";
-
-    // Three variables to be assigned through the console
-    int day, month, year;
-    cout << "Please enter day month year:\n";
-    cout << "Separate each value with a whitespace or [Enter]\n";
-    // Expectes three integers separated by whitespaces or [Enter]
-    // What happens if it wasn't integers?
-    cin >> day >> month >> year;
-    cout << "Date given: " << day << "/" << month << "/" << year << endl;
-}
-
-void readingInputExample1(){
-    cout << "Reading input examples using cin\n";
-
-    string just_a_str = "";
-    cout << "Enter two or more words to see what happens\n";
-    cin >> just_a_str;
-    // Output should only be first word
-    cout << "Input received was: " << just_a_str << endl;
-    cout << "It only printed the first value\n";
-    cout << "Let's call it again\n";
-    cin >> just_a_str;
-    // We didn't even get a chance to enter input
-    cout << "Input received was: " << just_a_str << endl;
-    cout << "Oops it got the values we were missing\n";
-}
-
-void readingInputExample2() {
-    cout << "Reading input examples using getline()\n";
-    string just_a_str = "";
-    cout << "Enter two words to see what happens\n";
-    getline(cin, just_a_str);
-    cout << "Input received was: " << just_a_str << endl;
-    cout << "It printed everything\n";
-
-    // Ignoring the first 5 characters
-    cout << "Write a 6+ letter sentence\n";
-    getline(cin.ignore(5), just_a_str);
-    cout << "Input received was: " << just_a_str << endl;
-    // Ignoring the first 5 characters or stop when we find 'g'
-    cout << "Write a that has g in its first 4 letters\n";
-    getline(cin.ignore(5, 'g'), just_a_str);
-    cout << "Input received was: " << just_a_str << endl << endl;
-
-}
-void assignmentsExample() {
-    cout << "Assigment Example" << endl;
-    int a, b, c, d, e;
-    // Must be declared first for this to work
-    a = b = c = d = e = 10;
-    // Otherwise we assign like this
-    int val1 = 5, val2 = 2;
-
-    // Apply all assignment shorthands
-    a+=val1;
-    b-=val1;
-    c*=val1;
-    d/=val1;
-    e%=val1;
-    // Apply shorthand on an expression
-    val2 *= val1 + 12;// val2 = val2 * (val1+12)
-
-    cout << "a = b = c = d = e = 10;" << endl;
-    cout << "val1 = 5;" << endl;
-    cout << "a+=val1 -> " << a << endl; 
-    cout << "b-=val1 -> " << b << endl; 
-    cout << "c*=val1 -> " << c << endl; 
-    cout << "d/=val1 -> " << d << endl; 
-    cout << "e%=val1 -> " << e << endl;
-
-    cout<<"\nval2=2\n";
-    // We can assign expressions as well
-    cout << "val2 *= val1 + 12 -> " << val2 << endl << endl;
-
-    // Short hand notation for incrementing by one
-    // This first passes its value to cout ad then increments it
-    cout << val2++ << endl;
-    // This first increments the value and then passes it to cout
-    cout << ++val2 << endl;
-}
-void characterExamples() {
-    cout << "Character Example\n";
-
-    // Characters only hold a single value
-    char c = 'C';
-    /* 
-    Characters are mapped to integer values
-    given by ASCII enconding format
-    */
-   // This represnets C
-    char cnum = 67;
-
-    // Converting a letter to its position in the alphabet
-    int alphaphetical_position = c - 'A' + 1;
-
-    string im_here = "I'm a string!";
-
-    cout << "This is a character: " << c << endl;
-    cout << "Character created using it's ASCII code: " << cnum << endl;
-    cout << "Position of this caracter in the alphabet: " << alphaphetical_position <<endl;
-
-    cout << im_here << endl << endl;
-
-}
 
 void numberExample() {
     cout << "Number Example\n";
@@ -274,11 +129,11 @@ void overflowExample() {
     // Let's do this again but with the bits
     cout << "Let's do this again but let's look at the bits\n";
     regularValue = 32767;
-    cout << "regularValue = 32767 (" << bitset<16>(regularValue) <<")\n";
+    cout << "regularValue = 32767 (" << bitset<16>(regularValue) << ")\n";
     regularValue++;
     cout << "after regularValue + 1" << endl;
     // Now it suddenly became negative, why?
-    cout << "regularValue = -32768 (" << bitset<16>(regularValue) <<")\n\n";
+    cout << "regularValue = -32768 (" << bitset<16>(regularValue) << ")\n\n";
 }
 
 void constantExample() {
