@@ -16,11 +16,11 @@ int main() {
     // cout << separator << endl;
     // readingInputExample2();
     // cout << separator << endl;
-    assignmentsExample();
+    // assignmentsExample();
     // cout << separator << endl;
     // characterExamples();
     // cout << separator << endl;
-    // numberExample();
+    numberExample();
     // cout << separator << endl;
     // coercingRulesExample();
     // cout << separator << endl;

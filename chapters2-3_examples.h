@@ -160,6 +160,9 @@ void characterExamples() {
 
     cout << im_here << endl << endl;
 
+    char c1 = 'a';
+    cout << (int) c1 << endl;
+
 }
 
 void numberExample() {
