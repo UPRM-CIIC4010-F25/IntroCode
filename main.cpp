@@ -1,5 +1,7 @@
 #include <iostream>
-#include "chapters2-3_examples.h"
+#include "example_code/assignment_char_examples.h"
+#include "example_code/in_out_example.h"
+#include "example_code/numbers_examples.h"
 
 using namespace std;
 
