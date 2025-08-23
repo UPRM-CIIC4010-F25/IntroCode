@@ -1,9 +1,5 @@
 #include<iostream>
-#include "refactor_example.h"
 
-void printNNumbers(int n) {
-    printN(n);
-}
 
 void printN(int n)
 {
@@ -11,6 +7,10 @@ void printN(int n)
     {
         std::cout << i << std::endl;
     }
+}
+
+void printNNumbers(int n) {
+    printN(n);
 }
 void printNSquareNumbers(int n)
 {

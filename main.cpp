@@ -1,42 +1,44 @@
 #include <iostream>
-#include "example_code/assignment_char_examples.h"
-#include "example_code/in_out_example.h"
-#include "example_code/numbers_examples.h"
+#include "numbers/number_types.cpp"
+#include "numbers/type_conversion.cpp"
+#include "numbers/random_numbers.cpp"
+#include "basics/io_examples.cpp"
+#include "basics/char_examples.cpp"
+#include "basics/variable_assigments.cpp"
+#include "strings/string_ops.cpp"
+#include "strings/string_format.cpp"
 
 using namespace std;
 
 int main() {
-    // For separating the different outputs
-    string separator;
-    separator.assign(60, '=');
-    cout << separator << endl;
-    // escapeSequencesExample();
-    // cout << separator << endl;
+    
+    cout << "\n=== Input/Output Examples ===\n";
+    escapeSequencesExample();
+    // Commented so they don't stop the flow of the program
     // multipleInputsExample();
-    // cout << separator << endl;
     // readingInputExample1();
-    // cout << separator << endl;
     // readingInputExample2();
-    // cout << separator << endl;
-    // assignmentsExample();
-    // cout << separator << endl;
-    // characterExamples();
-    // cout << separator << endl;
-    numberExample();
-    // cout << separator << endl;
-    // coercingRulesExample();
-    // cout << separator << endl;
-    // castingExample();
-    // cout << separator << endl;
-    // overflowExample();
-    // cout << separator << endl;
-    // constantExample();
-    // cout << separator << endl;
-    // stringFunctionExamples();
-    // cout << separator << endl;
-    // formattingExample();
-    // cout << separator << endl;
-    // randomExample();
-    // cout << separator << endl;
+    
+    cout << "\n=== Character and Assignment Examples ===\n";
+    assignmentsExample();
+    characterExamples();
 
+    cout << "\n=== Number Types, Conversion/Casting and Operations ===\n";
+    numberExample();
+    coercingRulesExample();
+    castingExample();
+    overflowExample();
+    constantExample();
+    
+    cout << "\n=== String Manipulation ===\n";
+    stringManipulationExample();
+
+    cout << "\n=== String Formatting ===\n";
+    stringFormattingExample();
+
+
+    cout << "\n=== Random Numbers ===\n";
+    randomExample();
+    
+    return 0;
 }
